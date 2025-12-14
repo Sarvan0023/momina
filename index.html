@@ -1,43 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MominaFans</title>
-    <link rel="stylesheet" href="./assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aytaşıma❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px 35px;
+      max-width: 420px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.6;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .heart {
+      font-size: 40px;
+      animation: beat 1.2s infinite;
+      margin-bottom: 15px;
+    }
+
+    .love-btn {
+      background: #ff4d6d;
+      border: none;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      margin: 6px;
+    }
+
+    .love-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+    }
+
+    .hidden-message {
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.6s ease;
+      color: #ff4d6d;
+      font-weight: 600;
+    }
+
+    .hidden-message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .signature {
+      margin-top: 25px;
+      font-style: italic;
+      color: #777;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1> <img src="./assets/img/Ekran görüntüsü 2024-11-30 184037.png" alt="">Product by Servan</h1>
-    <iframe width="200" height="200"
-        src=
-"./assets/img/Snaptik.app_7299903627110419718.mp4" 
-        frameborder="0"
-        allowfullscreen>
-    </iframe>
-    <iframe width="200" height="200"
-        src=
-"./assets/img/Snaptik.app_7379314902441151776.mp4" 
-        frameborder="0"
-        allowfullscreen>
-    </iframe>
-    <iframe width="200" height="200"
-        src=
-"./assets/img/Snaptik.app_7402727187595529480.mp4" 
-        frameborder="0"
-        allowfullscreen>
-    </iframe>
-    <iframe width="200" height="200"
-        src=
-"./assets/img/Snaptik.app_7435825907945819424.mp4" 
-        frameborder="0"
-        allowfullscreen>
-    </iframe>
-    <video width="320" height="240" controls>
-        <source src="./assets/img/Snaptik.app_7304265257524923654.mp4" type="video/mp4">
-        <source src="movie.ogg" type="video/ogg">
-      Your browser does not support the video tag.
-      </video>
+  <div class="card">
+    <h1>Canım Aytaşım 💕</h1>
+    <p>
+    Sən özün şeirsən elə bil, gözlərin o şeirin pik nöqtəsidi.Səsində ifaçısı
+    </p>
+    <p>
+      Aytaş, mənim ən gözəl şansımsan.
+      Yaxşı ki varsan.
+      Səni hər gün bir az da çox sevirəm, canavarım mənim.
+    </p>
+    <div class="heart">❤️</div>
+    <div class="buttons">
+      <button class="love-btn" onclick="showMessage(1)">Bura bas 💌</button>
+      <button class="love-btn" onclick="showMessage(2)">Eccük bunada bas 🤍</button>
+      <button class="love-btn" onclick="showMessage(3)">Bunada toxunarsan balım❤️</button>
+    </div>
+
+    <div id="message1" class="hidden-message">
+      Yaxşıki yolumuz kəsişdi ❤️<br />
+      Ümid varamda heç ayrılmayacaq.
+    </div>
+    <div id="message2" class="hidden-message">
+        Adının mənasına baxdım düşündümki, Aytac təkcə ad deyil.
+        Ay kimi qəlbimi işıqlandıran deməkdi<br />
+        Mənim xoşbaxlığımda elə sənin adındı balım❤️
+    </div>
+    <div id="message3" class="hidden-message">
       
-    
+      Canavarım mənim, həmişə üzün gülsün💞.
+    </div>
+    <div class="signature">— Pis oğlan ❤️</div>
+  </div>
+  <script>
+    function showMessage(id) {
+      const messages = document.querySelectorAll('.hidden-message');
+      messages.forEach(m => m.classList.remove('show'));
+      document.getElementById('message' + id).classList.add('show');
+    }
+  </script>
 </body>
 </html>
